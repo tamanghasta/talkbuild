@@ -38,7 +38,13 @@ var app = {
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
-        window.open("http://uat.talk.build", "_blank");
+        var ref = window.open("http://uat.talk.build", "_self", 'toolbar = no');
+        ref.addEventListener('loadstop', function(event) {
+           ref.show();
+        });
+        ref.addEventListener('exit', function() {
+            navigator.app.exitApp();
+        });
         //window.location = "http://uat.talk.build";
 //        var parentElement = document.getElemen;tById(id);
 //        var listeningElement = parentElement.querySelector('.listening');
