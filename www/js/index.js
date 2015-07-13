@@ -38,7 +38,7 @@ var app = {
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
-        var ref = window.open("http://uat.talk.build", "_system", 'toolbar = no');
+        var ref = window.open("http://uat.talk.build", "_system", 'location=no,toolbar=no');
         ref.addEventListener('loadstop', function(event) {
            ref.show();
         });
